@@ -1,0 +1,9 @@
+{
+  "app": "Jadwal PM",
+  "tagline": "Plan - Manage - Deliver",
+  "prototype": "desktop-first static dashboard",
+  "notes": [
+    "Sample data is currently embedded in app.js for GitHub Pages simplicity.",
+    "This file is reserved for the next iteration when the dashboard loads external static data."
+  ]
+}
