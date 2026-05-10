@@ -44,8 +44,15 @@
   <script src="./app.js"></script>
   <script>
     document.addEventListener("click", function (event) {
-      if (event.target.closest('[data-action="closeModal"]')) {
+      if (event.target.closest('[data-action="closeModal"], [data-action="modal:close"], #modalClose')) {
         document.getElementById("modalBackdrop").hidden = true;
+      }
+      if (event.target.closest("#languageToggle")) {
+        var html = document.documentElement;
+        var isRtl = html.dir === "rtl";
+        html.dir = isRtl ? "ltr" : "rtl";
+        html.lang = isRtl ? "en" : "ar";
+        event.target.textContent = isRtl ? "RTL" : "LTR";
       }
     });
   </script>
