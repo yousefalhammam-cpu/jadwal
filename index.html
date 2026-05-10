@@ -42,5 +42,12 @@
   </div>
   <div class="toast-stack" id="toastStack" aria-live="polite"></div>
   <script src="./app.js"></script>
+  <script>
+    document.addEventListener("click", function (event) {
+      if (event.target.closest('[data-action="closeModal"]')) {
+        document.getElementById("modalBackdrop").hidden = true;
+      }
+    });
+  </script>
 </body>
 </html>
