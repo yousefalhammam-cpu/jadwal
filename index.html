@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jadwal PM - Plan, Manage, Deliver</title>
+  <meta name="description" content="Jadwal PM desktop project management dashboard prototype.">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <span class="bar bar-1">JAD</span>
+          <span class="bar bar-2">W</span>
+          <span class="bar bar-3">AL</span>
+        </div>
+        <div>
+          <h1>Jadwal PM</h1>
+          <p>Plan &bull; Manage &bull; Deliver</p>
+        </div>
+      </div>
+      <nav class="nav-list" id="navList"></nav>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <div><strong>Workspace</strong><small>Engineering PMO</small></div>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="project-select">
+          <span class="field-label">Current Project</span>
+          <select id="projectSelector" aria-label="Current project selector"></select>
+        </div>
+        <label class="search-box" for="searchInput">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="Search projects, RFIs, tasks, files...">
+        </label>
+        <div class="header-actions">
+          <button class="date-chip" type="button">Q2 2026</button>
+          <button class="icon-button" type="button" aria-label="Notifications">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 17H9m9-6a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7Zm-4.2 10a2 2 0 0 1-3.6 0"/></svg>
+            <span class="badge">3</span>
+          </button>
+          <button class="language-toggle" id="languageToggle" type="button">RTL</button>
+          <div class="profile"><span>YA</span><div><strong>Yousef Alahmari</strong><small>Project Director</small></div></div>
+        </div>
+      </header>
+      <main class="dashboard">
+        <section class="page-heading">
+          <div><p class="eyebrow">Executive Dashboard</p><h2>Engineering Delivery Command Center</h2></div>
+          <div class="heading-actions"><button class="secondary-button" type="button">Export</button><button class="primary-button" type="button">New Project</button></div>
+        </section>
+        <section class="kpi-grid" id="kpiGrid" aria-label="Dashboard KPIs"></section>
+        <section class="dashboard-grid">
+          <article class="panel panel-wide"><div class="panel-head"><div><h3>Progress Overview</h3><p>Portfolio completion by discipline</p></div><span class="panel-meta">Weekly</span></div><div class="progress-chart" id="progressChart"></div></article>
+          <article class="panel"><div class="panel-head"><div><h3>Planned vs Actual</h3><p>Schedule performance</p></div><span class="panel-meta">SPI 0.91</span></div><div class="bar-chart" id="plannedChart"></div></article>
+          <article class="panel"><div class="panel-head"><div><h3>Tasks Status</h3><p>Open work distribution</p></div><span class="panel-meta">486 tasks</span></div><div class="status-chart" id="statusChart"></div></article>
+          <article class="panel"><div class="panel-head"><div><h3>Cost Overview</h3><p>Budget burn by package</p></div><span class="panel-meta">SAR</span></div><div class="cost-chart" id="costChart"></div></article>
+          <article class="panel panel-table"><div class="panel-head"><div><h3>Projects Overview</h3><p>Active portfolio health</p></div><button class="text-button" type="button">View all</button></div><div class="table-wrap"><table><thead><tr><th>Project</th><th>Client</th><th>Progress</th><th>Schedule</th><th>Budget</th><th>Risk</th><th>Owner</th></tr></thead><tbody id="projectRows"></tbody></table></div></article>
+          <article class="panel activity-panel"><div class="panel-head"><div><h3>Recent Activity</h3><p>Critical updates and approvals</p></div></div><div class="activity-list" id="activityList"></div></article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
